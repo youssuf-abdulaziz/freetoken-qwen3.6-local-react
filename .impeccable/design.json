@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T01:02:42Z",
+  "title": "Design System: PixelCraft Studio",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Burnt Orange",
+        "canonical": "#e85d26",
+        "tonalRamp": ["#3d1506", "#66230a", "#8f300d", "#b83d10", "#e85d26", "#f0784a", "#f4956f", "#f8b294"]
+      },
+      "accent-alt": {
+        "role": "secondary",
+        "displayName": "Lime Green",
+        "canonical": "#c4f73a",
+        "tonalRamp": ["#1a2006", "#323c0b", "#4a5810", "#627415", "#c4f73a", "#d3fa65", "#e1fd90", "#efffd8"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f7f5f3",
+        "tonalRamp": ["#1a1918", "#2e2d2b", "#42413f", "#575553", "#f7f5f3", "#f9f7f5", "#fbf9f7", "#fdfcfa"]
+      },
+      "neutral-card": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1a1a1a", "#2e2e2e", "#424242", "#565656", "#ffffff", "#fbfbfb", "#fafafa", "#fafafa"]
+      },
+      "neutral-heading": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0a0a0a",
+        "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2a2a2a", "#3a3a3a", "#5a5a5a", "#7a7a7a", "#9a9a9a", "#bababa"]
+      },
+      "neutral-text": {
+        "role": "neutral",
+        "displayName": "Text Charcoal",
+        "canonical": "#2c2c2c",
+        "tonalRamp": ["#1a1a1a", "#242424", "#2c2c2c", "#3a3a3a", "#5c5c5c", "#7a7a7a", "#999999", "#b7b7b7"]
+      },
+      "neutral-border": {
+        "role": "neutral",
+        "displayName": "Border Ink",
+        "canonical": "#0a0a0a",
+        "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2a2a2a", "#3a3a3a", "#5a5a5a", "#7a7a7a", "#9a9a9a", "#bababa"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Brand name and single-word impact in the hero."
+      },
+      "heading": {
+        "displayName": "Heading",
+        "purpose": "Section titles and CTA heading."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text, descriptions, and lead paragraphs."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Numbers, code snippets, and process step markers only."
+      }
+    },
+    "shadows": [
+      { "name": "solid-offset-sm", "value": "3px 3px 0px 0px var(--border)", "purpose": "Card-level elevation on stat cards, tech pills, process icons." },
+      { "name": "solid-offset", "value": "4px 4px 0px 0px var(--border)", "purpose": "Primary elevation on buttons, service cards, code block frame." },
+      { "name": "solid-offset-lg", "value": "6px 6px 0px 0px var(--border)", "purpose": "Hero elevation on the code block and composition blocks." },
+      { "name": "solid-offset-collapsed", "value": "2px 2px 0px 0px var(--border)", "purpose": "Hover state — shadow shrinks as element translates diagonally." },
+      { "name": "solid-offset-active", "value": "0 0 0 0 var(--border)", "purpose": "Active/click — shadow fully collapsed, element pressed flat." },
+      { "name": "bar-shadow", "value": "0 -4px 0px 0px var(--border)", "purpose": "Mobile bottom app bar upward shadow." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Default transition for all state changes, hover, and color swaps." },
+      { "name": "ease-reveal", "value": "0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Scroll-reveal and entrance animations (slideUp)." },
+      { "name": "ease-marquee", "value": "25s linear infinite", "purpose": "Infinite marquee horizontal scroll." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "768px" },
+      { "name": "md", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Dark primary CTA button with solid offset shadow and press-down hover.",
+      "html": "<button class=\"ds-btn-primary\">Start a Project</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 1rem; font-weight: 600; border-radius: 4px; border: 2px solid #0a0a0a; background: #0a0a0a; color: #f7f5f3; cursor: pointer; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 4px 4px 0px 0px #0a0a0a; text-decoration: none; white-space: nowrap; }.ds-btn-primary:hover { background: #e85d26; border-color: #e85d26; color: #fff; box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }.ds-btn-primary:active { box-shadow: 0 0 0 0 #0a0a0a; transform: translate(4px, 4px); }.ds-btn-primary:focus-visible { outline: 2px solid #e85d26; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White card button with border and lime green hover.",
+      "html": "<button class=\"ds-btn-secondary\">View Our Work</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.75rem; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 1rem; font-weight: 600; border-radius: 4px; border: 2px solid #0a0a0a; background: #ffffff; color: #0a0a0a; cursor: pointer; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); text-decoration: none; white-space: nowrap; }.ds-btn-secondary:hover { background: #c4f73a; color: #0a0a0a; border-color: #0a0a0a; box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }.ds-btn-secondary:active { box-shadow: 0 0 0 0 #0a0a0a; transform: translate(4px, 4px); }.ds-btn-secondary:focus-visible { outline: 2px solid #e85d26; outline-offset: 2px; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Grid-adjacent service card with icon, number watermark, and border separators.",
+      "html": "<div class=\"ds-card-service\"><div class=\"ds-card-service__number\">01</div><div class=\"ds-card-service__icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/></svg></div><h3 class=\"ds-card-service__title\">Web Design</h3><p class=\"ds-card-service__desc\">High-performing websites that convert visitors into customers.</p></div>",
+      "css": ".ds-card-service { background: #ffffff; padding: 2.5rem 2rem; position: relative; border-right: 3px solid #0a0a0a; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }.ds-card-service:last-child { border-right: none; }.ds-card-service__number { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 3.5rem; font-weight: 800; color: #e85d26; opacity: 0.12; position: absolute; top: 0.75rem; right: 1rem; line-height: 1; }.ds-card-service__icon { display: inline-flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; background: #c4f73a; color: #0a0a0a; font-size: 1.5rem; border: 2px solid #0a0a0a; border-radius: 4px; margin-bottom: 1.5rem; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }.ds-card-service:hover .ds-card-service__icon { box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }.ds-card-service__title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.375rem; font-weight: 700; color: #0a0a0a; margin-bottom: 0.75rem; }.ds-card-service__desc { font-size: 0.938rem; color: #6b6b6b; line-height: 1.65; }.ds-card-service:hover { background: #edeae6; z-index: 1; }.ds-card-service::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 0; background: #e85d26; transition: height 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }.ds-card-service:hover::before { height: 4px; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Pill-shaped tech stack tag with border and accent hover.",
+      "html": "<span class=\"ds-tag\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><circle cx=\"12\" cy=\"12\" r=\"8\"/></svg>React</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.75rem; background: #f7f5f3; color: #6b6b6b; font-size: 0.75rem; font-weight: 600; border: 2px solid #0a0a0a; border-radius: 100px; cursor: default; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }.ds-tag i { font-size: 0.875rem; color: #e85d26; transition: color 0.2s; }.ds-tag:hover { border-color: #e85d26; color: #e85d26; background: rgba(232, 93, 38, 0.08); }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Uppercase section heading label with accent underline bar.",
+      "html": "<span class=\"ds-section-label\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><polygon points=\"12,2 22,20 2,20\"/></svg>Services</span>",
+      "css": ".ds-section-label { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.813rem; font-weight: 700; color: #e85d26; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; padding-bottom: 0.375rem; border-bottom: 3px solid #e85d26; }"
+    },
+    {
+      "name": "Nav CTA Button",
+      "kind": "button",
+      "refersTo": "nav-cta",
+      "description": "Small primary CTA in the navigation bar.",
+      "html": "<a href=\"#cta\" class=\"ds-nav-cta\">Get in Touch</a>",
+      "css": ".ds-nav-cta { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.625rem 1.25rem; background: #0a0a0a; color: #f7f5f3; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; border: 2px solid #0a0a0a; border-radius: 4px; text-decoration: none; cursor: pointer; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 3px 3px 0px 0px #0a0a0a; white-space: nowrap; }.ds-nav-cta:hover { background: #e85d26; border-color: #e85d26; color: #fff; box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }.ds-nav-cta:active { box-shadow: 0 0 0 0 #0a0a0a; transform: translate(4px, 4px); }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Pill-shaped service badge with accent text and solid border.",
+      "html": "<span class=\"ds-badge\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><polygon points=\"12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9\"/></svg>Full-Service Web Agency</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; background: #ffffff; color: #e85d26; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.813rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; border: 2px solid #0a0a0a; border-radius: 100px; box-shadow: 3px 3px 0px 0px #0a0a0a; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }.ds-badge:hover { box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Neo-brutalist code snippet with window dots and syntax highlighting.",
+      "html": "<div class=\"ds-code\"><div class=\"ds-code__dots\"><span class=\"ds-code__dot ds-code__dotRed\"></span><span class=\"ds-code__dot ds-code__dotYellow\"></span><span class=\"ds-code__dot ds-code__dotGreen\"></span></div><pre class=\"ds-code__pre\"><code><span class=\"ds-code__keyword\">const</span> build = () =&gt; {'{'}<br/>  <span class=\"ds-code__keyword\">return</span> {'{'}<br/>    design: <span class=\"ds-code__string\">'bold'</span>,<br/>    speed: <span class=\"ds-code__number\">100</span>,<br/>    a11y: <span class=\"ds-code__boolean\">true</span><br/>  {'}'};<br/>{'}'};</code></pre></div>",
+      "css": ".ds-code { background: #ffffff; border: 3px solid #0a0a0a; border-radius: 4px; padding: 0; text-align: left; box-shadow: 6px 6px 0px 0px #0a0a0a; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); overflow: hidden; }.ds-code:hover { box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }.ds-code__dots { display: flex; gap: 0.5rem; padding: 0.75rem 1rem; background: #edeae6; border-bottom: 2px solid #0a0a0a; }.ds-code__dot { width: 12px; height: 12px; border-radius: 2px; border: 1px solid #0a0a0a; }.ds-code__dotRed { background: #ef4444; }.ds-code__dotYellow { background: #fbbf24; }.ds-code__dotGreen { background: #22c55e; }.ds-code__pre { padding: 1.25rem; margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.7; color: #2c2c2c; overflow-x: auto; }.ds-code__keyword { color: #e85d26; font-weight: 600; }.ds-code__string { color: #06d6a0; }.ds-code__number { color: #fbbf24; }.ds-code__boolean { color: #ef476f; }"
+    },
+    {
+      "name": "Stat Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Compact stat display with large number and label, solid border and offset shadow.",
+      "html": "<div class=\"ds-stat-card\"><div class=\"ds-stat-card__value\">200<span class=\"ds-stat-card__suffix\">+</span></div><div class=\"ds-stat-card__label\">Projects</div></div>",
+      "css": ".ds-stat-card { background: #ffffff; border: 3px solid #0a0a0a; border-radius: 4px; padding: 1rem 1.75rem; min-width: 120px; flex: 1; max-width: 180px; box-shadow: 3px 3px 0px 0px #0a0a0a; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }.ds-stat-card:hover { box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); background: #c4f73a; }.ds-stat-card__value { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.75rem; font-weight: 800; color: #0a0a0a; line-height: 1.1; letter-spacing: -0.02em; }.ds-stat-card__suffix { font-size: 1.25rem; color: #e85d26; }.ds-stat-card__label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b6b6b; margin-top: 0.25rem; }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": null,
+      "description": "Square theme toggle button with icon and offset shadow.",
+      "html": "<button class=\"ds-theme-toggle\" aria-label=\"Toggle theme\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><circle cx=\"12\" cy=\"12\" r=\"5\"/><path d=\"M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg></button>",
+      "css": ".ds-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: #ffffff; border: 2px solid #0a0a0a; border-radius: 4px; color: #2c2c2c; cursor: pointer; font-size: 1.125rem; transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 3px 3px 0px 0px #0a0a0a; }.ds-theme-toggle:hover { background: #c4f73a; color: #0a0a0a; border-color: #0a0a0a; box-shadow: 2px 2px 0px 0px #0a0a0a; transform: translate(2px, 2px); }.ds-theme-toggle:active { box-shadow: 0 0 0 0 #0a0a0a; transform: translate(4px, 4px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Blueprint Workshop",
+    "overview": "PixelCraft Studio embraces a neo-brutalist design language inspired by raw architectural blueprints and maker-culture aesthetics. The system rejects soft shadows and subtle gradients in favor of hard edges, bold borders, and solid offset shadows that evoke the physicality of drafting — each element feels stamped, cut, and assembled rather than rendered.\n\nThe visual identity is built on a warm paper-and-ink foundation with a burnt orange primary accent and a shocking lime green secondary accent. Typography pairs a bold, geometric grotesque for headlines with a humanist sans-serif for body text, creating tension between the architectural and the approachable.\n\nEvery interactive element responds with a tactile \"press-down\" motion: the shadow collapses and the element translates diagonally, as if a physical block is being pushed into place. Grid lines, crosshairs, corner brackets, and repeating patterns reinforce the blueprint metaphor throughout.",
+    "keyCharacteristics": [
+      "Solid 2–3px borders on every surface (no soft or invisible edges)",
+      "Neo-brutalist offset shadows in border color, never blurred",
+      "Warm paper background with high-contrast ink-like text",
+      "Burnt orange primary accent, lime green secondary accent",
+      "Bold geometric headings meeting humanist body text",
+      "Monospace accents for numbers and data",
+      "Tactile hover interactions: shadow collapse + diagonal translate"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Burnt orange is the primary accent and should appear on ≤15% of any given screen. Its rarity is the point. Lime green is the secondary and appears even less.", "section": "colors" },
+      { "name": "The Universal Border Rule", "body": "Every surface has a visible border. No element floats without being outlined; depth comes from offset shadows and color contrast, not from the absence of edges.", "section": "shapes" },
+      { "name": "The Flat-By-Default Rule", "body": "All elements sit flush at rest. Shadows only appear as decorative framing; they shrink on hover and vanish on active, as if the element is being pressed flat against the surface.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use solid offset shadows in border color for all elevation — never blurred shadows.",
+      "Do maintain 2–3px borders on every interactive surface and card.",
+      "Do keep the accent color restrained — it should feel special, not omnipresent.",
+      "Do use uppercase with wide letter-spacing for labels and navigation.",
+      "Do pair the bold geometric heading font with the humanist body font.",
+      "Do reserve monospace for numbers, code, and process markers only.",
+      "Do implement hover interactions with shadow collapse + diagonal translate.",
+      "Do group cards with zero gap and shared borders for unified grid blocks."
+    ],
+    "donts": [
+      "Don't use border-radius values between 4px and 100px — only sharp, small(4px), or pill(100px).",
+      "Don't use box-shadow with blur or spread — only solid offset shadows.",
+      "Don't introduce new accent colors — the system has orange and lime green.",
+      "Don't float cards or elements without visible borders or shadows.",
+      "Don't increase border thickness beyond 3px for structural elements."
+    ]
+  }
+}

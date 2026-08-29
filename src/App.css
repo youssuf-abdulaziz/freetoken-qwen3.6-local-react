@@ -7,3 +7,9 @@
 main {
   flex: 1;
 }
+
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 4.5rem;
+  }
+}
