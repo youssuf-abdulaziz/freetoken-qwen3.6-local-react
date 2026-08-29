@@ -20,7 +20,7 @@
   font-family: var(--font-body);
   font-size: 0.813rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
@@ -137,12 +137,12 @@
 
 .compBlock--orange {
   background: var(--accent);
-  color: #fff;
+  color: #0a0a0a;
 }
 
 .compBlock--lime {
   background: var(--accent-alt);
-  color: var(--text-h);
+  color: #0a0a0a;
 }
 
 .compBlock--striped {

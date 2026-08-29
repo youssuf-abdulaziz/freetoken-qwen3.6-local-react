@@ -51,7 +51,7 @@
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
-  color: var(--text-h);
+  color: #0a0a0a;
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
@@ -61,7 +61,7 @@
 
 .cta__text {
   font-size: 1.125rem;
-  color: var(--text-muted);
+  color: #3f3f3f;
   line-height: 1.7;
   margin-bottom: 2.5rem;
   position: relative;

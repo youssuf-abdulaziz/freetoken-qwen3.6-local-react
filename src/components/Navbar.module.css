@@ -110,8 +110,8 @@
 }
 
 .cta:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
   color: #fff;
   box-shadow: 2px 2px 0px 0px var(--border);
   transform: translate(2px, 2px);
@@ -140,8 +140,8 @@
 
 .themeToggle:hover {
   background: var(--accent-alt);
-  color: var(--text-h);
-  border-color: var(--text-h);
+  color: #0a0a0a;
+  border-color: #0a0a0a;
   box-shadow: 2px 2px 0px 0px var(--border);
   transform: translate(2px, 2px);
 }
@@ -223,8 +223,8 @@
 }
 
 .bottomBar__cta:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
   color: #fff;
   box-shadow: 0 0 0 0 var(--border);
   transform: translate(-2px, 0px);
@@ -251,8 +251,8 @@
 
 .bottomBar__theme:hover {
   background: var(--accent-alt);
-  color: var(--text-h);
-  border-color: var(--text-h);
+  color: #0a0a0a;
+  border-color: #0a0a0a;
   box-shadow: 2px 2px 0px 0px var(--border);
   transform: translate(2px, 2px);
 }

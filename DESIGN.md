@@ -3,6 +3,8 @@ name: PixelCraft Studio
 description: Neo-brutalist web agency landing page
 colors:
   accent: "#e85d26"
+  accent-text: "#bd4218"
+  accent-strong: "#b83e0e"
   accent-alt: "#c4f73a"
   accent-bg: "rgba(232, 93, 38, 0.08)"
   neutral-bg: "#f7f5f3"
@@ -10,17 +12,19 @@ colors:
   neutral-card: "#ffffff"
   neutral-text: "#2c2c2c"
   neutral-heading: "#0a0a0a"
-  neutral-muted: "#6b6b6b"
+  neutral-muted: "#5f5f5f"
   neutral-border: "#0a0a0a"
   neutral-border-light: "#d4d0cb"
   dark-accent: "#f06e3d"
+  dark-accent-text: "#f28a5f"
+  dark-accent-strong: "#d04917"
   dark-accent-alt: "#b8f02a"
   dark-bg: "#0d0d0d"
   dark-bg-alt: "#171717"
   dark-card: "#1c1c1c"
   dark-text: "#a3a3a3"
   dark-heading: "#f5f5f5"
-  dark-muted: "#737373"
+  dark-muted: "#a6a6a6"
   dark-border: "#2a2a2a"
   dark-border-light: "#222222"
   code-string: "#06d6a0"
@@ -52,6 +56,34 @@ typography:
     fontSize: "0.875em"
     fontWeight: 400
     lineHeight: 1.7
+  scale:
+    mega: "12rem"
+    hero-watermark-max: "18rem"
+    hero-bg: "8rem"
+    display-max: "7rem"
+    cta-mega-min: "5rem"
+    watermark: "4rem"
+    quote: "4rem"
+    display: "3.5rem"
+    title-xl: "3rem"
+    stat-xl: "2.5rem"
+    eyebrow: "2.25rem"
+    stat-lg: "2rem"
+    stat: "1.75rem"
+    featured-metric: "1.5rem"
+    card-title: "1.375rem"
+    icon-lg: "1.25rem"
+    lead: "1.125rem"
+    about-lead: "1.063rem"
+    default: "1rem"
+    card-desc: "0.938rem"
+    small: "0.875rem"
+    caption: "0.813rem"
+    stat-label: "0.75rem"
+    micro: "0.688rem"
+    mini: "0.625rem"
+    mono-sm: "0.625rem"
+    mono-lg: "0.875rem"
 rounded:
   sm: "4px"
   pill: "100px"
@@ -298,6 +330,6 @@ Decorative geometry: corner brackets (3px accent border on each corner of the he
 - **Don't** use box-shadow with blur or spread — only solid offset shadows (`Xpx Ypx 0px 0px`).
 - **Don't** introduce gradients except where already established (marquee fade edges, pattern overlays).
 - **Don't** add new accent colors — the system has orange and lime green; everything else is neutral.
-- **Don't** use font sizes outside the established scale: clamp(3.5rem, 10vw, 7rem) → clamp(2rem, 4vw, 3.5rem) → 1.125rem → 1rem → 0.938rem → 0.813rem → 0.75rem → 0.625rem.
+- **Don't** use font sizes outside the established scale: clamp(12rem/5rem, 15vw, 5rem) → clamp(3.5rem, 10vw, 7rem) → 3.5rem → clamp(2rem, 4vw, 3.5rem) → clamp(2rem, 4vw, 3rem) → 2.5rem → 2rem → 1.75rem → 1.5rem → 1.375rem → 1.25rem → 1.125rem → 1rem → 0.938rem → 0.875rem → 0.813rem → 0.75rem → 0.625rem.
 - **Don't** float cards or elements without visible borders or shadows — every surface must be bounded.
 - **Don't** increase border thickness beyond 3px for structural elements or 4px for section dividers.

@@ -17,7 +17,7 @@
   font-family: var(--font-body);
   font-size: 0.813rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent-text);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
@@ -125,7 +125,7 @@
   align-items: center;
   justify-content: center;
   background: var(--accent-alt);
-  color: var(--text-h);
+  color: #0a0a0a;
   font-family: var(--font-heading);
   font-size: 1.125rem;
   font-weight: 800;
@@ -136,7 +136,7 @@
 
 .testimonialCard:hover .testimonialCard__avatar {
   background: var(--accent);
-  color: #fff;
+  color: #0a0a0a;
   box-shadow: 2px 2px 0px 0px var(--border);
   transform: translate(2px, 2px);
 }
