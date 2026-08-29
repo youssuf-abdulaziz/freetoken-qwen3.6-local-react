@@ -766,60 +766,117 @@
   transform: translate(2px, 2px);
 }
 
-/* ── Entrance Animations ───────────────────────────────── */
+/* ── Focal load sequence: the Blueprint Stamp ─────────────
+   One authored moment: the drafting frame seats, the title
+   is pressed/inked in, then the controls lock into place.
+   Ease is exponential-out (confident arrival). Everything
+   animates only transform/clip-path/opacity — never layout. */
 
-.hero .badge {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.05s; opacity: 0;
+/* Frame placement — brackets seat from their corners */
+.hero__bracketTL,
+.hero__bracketTR,
+.hero__bracketBL,
+.hero__bracketBR {
+  animation-name: frameSeat;
+  animation-duration: 0.38s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
 }
-.hero .liveBadge {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.1s; opacity: 0;
-}
-.hero .title {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.15s; opacity: 0;
-}
-.hero .subtitle {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.2s; opacity: 0;
-}
-.hero .ctaRow {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.25s; opacity: 0;
-}
-.hero .diffRow {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.3s; opacity: 0;
-}
-.hero .processStrip {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.35s; opacity: 0;
-}
-.hero .statsRow {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.4s; opacity: 0;
-}
-.hero .featuredSection {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.45s; opacity: 0;
-}
-.hero .techStack {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.5s; opacity: 0;
-}
-.hero .marquee {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.55s; opacity: 0;
-}
-.hero .trustedBy {
-  animation: slideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: 0.6s; opacity: 0;
+.hero__bracketTL { animation-delay: 0.02s; }
+.hero__bracketTR { animation-delay: 0.06s; }
+.hero__bracketBL { animation-delay: 0.1s; }
+.hero__bracketBR { animation-delay: 0.14s; }
+
+@keyframes frameSeat {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { transform: scale(1); }
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(24px); }
+/* Side rulers — the drafting rails slide in as a unit */
+.hero__rulerL,
+.hero__rulerR {
+  animation-name: railsIn;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  animation-delay: 0.12s;
+}
+
+@keyframes railsIn {
+  from { opacity: 0; transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* Title — the authored ink-press stamp (hard clip wipe) */
+.title {
+  opacity: 0;
+  animation-name: stampIn;
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+  animation-delay: 0.18s;
+}
+
+@keyframes stampIn {
+  0%   { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(14px) scale(0.985); }
+  45%  { opacity: 1; clip-path: inset(0 0 0% 0); transform: translateY(0) scale(0.985); }
+  60%  { transform: translateY(0) scale(1.004); }
+  100% { opacity: 1; clip-path: inset(0 0 0% 0); transform: translateY(0) scale(1); }
+}
+
+/* Support — badges, subtitle, CTAs lock into place (press-down) */
+.hero__topRow,
+.subtitle,
+.ctaRow {
+  opacity: 0;
+  animation-name: lockIn;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+.hero__topRow { animation-delay: 0.28s; }
+.subtitle     { animation-delay: 0.34s; }
+.ctaRow       { animation-delay: 0.42s; }
+
+@keyframes lockIn {
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll-choreographed parallax ───────────────────────
+   The drafting sheet drifts as the reader moves down: the
+   giant PIXELCRAFT watermark recedes and the blueprint grid
+   shears beneath it. CSS scroll-driven animation only where
+   supported; elsewhere the layers sit at their static rest
+   position (the site is complete without the enhancement). */
+
+@supports (animation-timeline: scroll()) {
+  .hero::before {
+    animation-name: watermarkParallax;
+    animation-timeline: scroll(root);
+    animation-range: 0vh 110vh;
+  }
+  .hero__grid {
+    animation-name: gridParallax;
+    animation-timeline: scroll(root);
+    animation-range: 0vh 130vh;
+  }
+}
+
+@keyframes watermarkParallax {
+  from {
+    transform: translateX(-50%) translateY(8px);
+    opacity: 0.45;
+  }
+  to {
+    transform: translateX(-50%) translateY(-70px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes gridParallax {
+  from { transform: translateY(0); }
+  to   { transform: translateY(70px); }
 }
 
 /* ── Responsive ────────────────────────────────────────── */

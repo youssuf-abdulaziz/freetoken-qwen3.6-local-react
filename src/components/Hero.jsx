@@ -65,62 +65,54 @@ function Hero() {
       <div className={styles.hero__rulerR} />
 
       <div className={styles.container}>
-        {/* Top row */}
-        <ScrollReveal>
-          <div className={styles.hero__topRow}>
-            <span className={styles.badge}>
-              <i className={`${styles.badge__icon} bi bi-stars`} />
-              Full-Service Web Agency
-            </span>
-            <span className={styles.liveBadge}>
-              <span className={styles.liveDot} />
-              Accepting Q4 Projects
-            </span>
-          </div>
-        </ScrollReveal>
+        {/* Top row — stamped entrance owned by the focal load sequence */}
+        <div className={styles.hero__topRow}>
+          <span className={styles.badge}>
+            <i className={`${styles.badge__icon} bi bi-stars`} />
+            Full-Service Web Agency
+          </span>
+          <span className={styles.liveBadge}>
+            <span className={styles.liveDot} />
+            Accepting Q4 Projects
+          </span>
+        </div>
 
-        {/* Title */}
-        <ScrollReveal delay={50}>
-          <h1 className={styles.title}>
-            <span className={styles.title__brand}>PixelCraft</span>
-            <span className={styles.title__tagline}>
-              We build websites
-              <br />
-              that convert.
-            </span>
-          </h1>
-        </ScrollReveal>
+        {/* Title — the authored focal stamp */}
+        <h1 className={styles.title}>
+          <span className={styles.title__brand}>PixelCraft</span>
+          <span className={styles.title__tagline}>
+            We build websites
+            <br />
+            that convert.
+          </span>
+        </h1>
 
         {/* Subtitle */}
-        <ScrollReveal delay={100}>
-          <p className={styles.subtitle}>
-            We design, develop, and optimize high-performing websites and web
-            applications. No fluff. Just results.
-          </p>
-        </ScrollReveal>
+        <p className={styles.subtitle}>
+          We design, develop, and optimize high-performing websites and web
+          applications. No fluff. Just results.
+        </p>
 
         {/* CTAs */}
-        <ScrollReveal delay={150}>
-          <div className={styles.ctaRow}>
-            <a href="#cta" className={`${styles.btn} ${styles.btnPrimary}`}>
-              Start a Project{' '}
-              <i className={`${styles.btn__icon} bi bi-arrow-right`} />
-            </a>
-            <a
-              href="#portfolio"
-              className={`${styles.btn} ${styles.btnSecondary}`}
-            >
-              <i className={`${styles.btn__icon} bi bi-collection`} /> View Our
-              Work
-            </a>
-            <a
-              href="#services"
-              className={`${styles.btn} ${styles.btnTertiary}`}
-            >
-              <i className={`${styles.btn__icon} bi bi-list-check`} /> See What We Do
-            </a>
-          </div>
-        </ScrollReveal>
+        <div className={styles.ctaRow}>
+          <a href="#cta" className={`${styles.btn} ${styles.btnPrimary}`}>
+            Start a Project{' '}
+            <i className={`${styles.btn__icon} bi bi-arrow-right`} />
+          </a>
+          <a
+            href="#portfolio"
+            className={`${styles.btn} ${styles.btnSecondary}`}
+          >
+            <i className={`${styles.btn__icon} bi bi-collection`} /> View Our
+            Work
+          </a>
+          <a
+            href="#services"
+            className={`${styles.btn} ${styles.btnTertiary}`}
+          >
+            <i className={`${styles.btn__icon} bi bi-list-check`} /> See What We Do
+          </a>
+        </div>
 
         {/* Differentiators */}
         <ScrollReveal delay={200}>

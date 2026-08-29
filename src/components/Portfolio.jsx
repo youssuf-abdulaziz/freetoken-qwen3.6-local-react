@@ -4,7 +4,7 @@ import styles from './Portfolio.module.css'
 const projects = [
   {
     title: 'Finova Dashboard',
-    desc: 'A real-time financial analytics dashboard with interactive charts, dark mode, and team collaboration features.',
+    desc: 'A real-time financial analytics dashboard with interactive charts, dark mode, and team collaboration.',
     tags: ['React', 'TypeScript', 'D3.js'],
     gradient: 'linear-gradient(135deg, #e85d26 0%, #b83e0e 100%)',
     icon: 'bi-graph-up',
