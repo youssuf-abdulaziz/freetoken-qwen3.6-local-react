@@ -13,8 +13,9 @@ function App() {
   return (
     <ThemeProvider>
       <div className="page">
+        <a href="#main" className="skipLink">Skip to content</a>
         <Navbar />
-        <main>
+        <main id="main">
           <Hero />
           <Services />
           <About />

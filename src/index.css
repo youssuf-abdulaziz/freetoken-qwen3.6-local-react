@@ -80,6 +80,11 @@ body::before {
   transition: opacity var(--transition);
 }
 
+[data-theme='dark'] body::before {
+  filter: invert(1);
+  opacity: 0.06;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -130,5 +135,10 @@ code {
 
 ::selection {
   background: var(--accent);
-  color: #fff;
+  color: #0a0a0a;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

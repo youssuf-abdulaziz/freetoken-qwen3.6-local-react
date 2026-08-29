@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import ScrollReveal from './ScrollReveal'
 import styles from './Hero.module.css'
 
@@ -19,10 +20,10 @@ const clients = [
 ]
 
 const processSteps = [
-  { num: '01', label: 'Discover', icon: 'bi-search' },
-  { num: '02', label: 'Design', icon: 'bi-palette' },
-  { num: '03', label: 'Build', icon: 'bi-gear' },
-  { num: '04', label: 'Launch', icon: 'bi-rocket-takeoff' },
+  { label: 'Discover', icon: 'bi-search' },
+  { label: 'Design', icon: 'bi-palette' },
+  { label: 'Build', icon: 'bi-gear' },
+  { label: 'Launch', icon: 'bi-rocket-takeoff' },
 ]
 
 const techBadges = [
@@ -47,6 +48,21 @@ const featuredWork = [
 ]
 
 function Hero() {
+  const marqueeRef = useRef(null)
+
+  useEffect(() => {
+    const el = marqueeRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        el.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused'
+      },
+      { rootMargin: '100px 0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section className={styles.hero}>
       {/* Background layers */}
@@ -125,16 +141,16 @@ function Hero() {
           <div className={styles.processStrip}>
             {processSteps.map((step, i) => (
               <div className={styles.processStep} key={i}>
+                <span
+                  className={styles.processStep__watermark}
+                  aria-hidden="true"
+                >
+                  PIXELCRAFT
+                </span>
                 <span className={styles.processStep__icon}>
                   <i className={`bi ${step.icon}`} />
                 </span>
-                <span className={styles.processStep__num}>{step.num}</span>
                 <span className={styles.processStep__label}>{step.label}</span>
-                {i < processSteps.length - 1 && (
-                  <span className={styles.processStep__arrow}>
-                    <i className="bi bi-arrow-right" />
-                  </span>
-                )}
               </div>
             ))}
           </div>
@@ -190,7 +206,7 @@ function Hero() {
         </ScrollReveal>
 
         <div className={styles.marquee}>
-          <div className={styles.marquee__track}>
+          <div className={styles.marquee__track} ref={marqueeRef}>
             <span>
               WEB DESIGN &#8226; DEVELOPMENT &#8226; E-COMMERCE &#8226; UI/UX
               &#8226; BRAND IDENTITY &#8226; CREATIVE DIRECTION &#8226;

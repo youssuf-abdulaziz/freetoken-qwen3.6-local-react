@@ -3,7 +3,7 @@ name: PixelCraft Studio
 description: Neo-brutalist web agency landing page
 colors:
   accent: "#e85d26"
-  accent-text: "#bd4218"
+  accent-text: "#b04016"
   accent-strong: "#b83e0e"
   accent-alt: "#c4f73a"
   accent-bg: "rgba(232, 93, 38, 0.08)"

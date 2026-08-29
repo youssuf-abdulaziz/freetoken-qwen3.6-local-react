@@ -62,7 +62,7 @@ function Navbar() {
           ))}
         </ul>
         <div className={styles.bottomBar__actions}>
-          <a href="#cta" className={styles.bottomBar__cta}>
+          <a href="#cta" className={styles.bottomBar__cta} aria-label="Start a project">
             <i className="bi bi-arrow-right" />
           </a>
           <button
