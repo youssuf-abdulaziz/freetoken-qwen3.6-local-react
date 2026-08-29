@@ -1,16 +1,44 @@
-# React + Vite
+# PixelCraft Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page conversion-focused landing site for a fictional web design & development agency. This is a concept/demo project — all content, client names, and stats are placeholders.
 
-Currently, two official plugins are available:
+**Tagline:** "We build websites that convert."
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+PixelCraft Studio is a landing page that persuades visitors to contact the agency and hire them for web design, development, and digital projects. Built as a static React/Vite single-page site with scrollable sections that guide the visitor toward reaching out.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sections
 
-## Expanding the ESLint configuration
+- Hero
+- Services
+- About
+- Portfolio
+- Testimonials
+- CTA
+- Footer
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React 19 + Vite
+- CSS Modules for scoped, component-level styles
+- Bootstrap Icons
+- Google Fonts (Bricolage Grotesque, IBM Plex Sans, JetBrains Mono)
+- Light/dark theme toggle (persisted via `localStorage`, FOUC-safe)
+- Custom `ScrollReveal` component for scroll-triggered animations
+- Fully responsive
+
+## Getting Started
+
+```bash
+pnpm install
+pnpm dev      # start the dev server
+pnpm build    # production build
+pnpm preview  # preview the production build
+pnpm lint     # run ESLint
+```
+
+## Project Docs
+
+- `PRODUCT.md` — product brief, positioning, and principles
+- `DESIGN.md` — design system and visual details
