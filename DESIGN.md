@@ -225,7 +225,7 @@ Sections alternate between paper background (`--bg`) and shadow paper (`--bg-alt
 
 Grid-based card layouts use `gap: 0` with visible 3px borders between cells — cards touch each other and are separated only by their shared borders, creating a unified block with internal divisions.
 
-Breakpoints: `768px` (mobile layout changes), `900px` (card grid collapses from 3-column to 1-column).
+Breakpoints: `900px` (bottom-bar nav replaces desktop nav), `768px` (some card grids collapse to 1-column).
 
 ## Elevation & Depth
 

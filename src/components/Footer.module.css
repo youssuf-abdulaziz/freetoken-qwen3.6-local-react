@@ -122,7 +122,11 @@
   transition: color var(--transition), border-color var(--transition);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .footer {
+    padding-bottom: 7.5rem;
+  }
+
   .footer__inner {
     grid-template-columns: 1fr;
     text-align: center;
