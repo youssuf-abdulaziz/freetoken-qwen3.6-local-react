@@ -696,7 +696,7 @@
 }
 .marquee__track {
   display: inline-flex;
-  animation: marquee 25s linear infinite;
+  animation: marquee 50s linear infinite;
 }
 .marquee__track span {
   font-family: var(--font-heading);
