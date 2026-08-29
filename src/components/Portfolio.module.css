@@ -17,7 +17,7 @@
 
 .sectionHeader {
   text-align: center;
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto 4rem;
 }
 
@@ -54,47 +54,167 @@
   transition: color var(--transition);
 }
 
-.portfolio__grid {
+/* ── Sheet B · The Works ─────────────────────────────────
+   The portfolio is bound as the second folio of the Field
+   Dossier: a framed plate with the same folio header language
+   as Sheet A (volume + sheet index), crosshair registration,
+   and each project filed as a Work Order spec-sheet — dashed
+   blueprint art panel, mono spec rows, and a stamped approval
+   as the section's single authored focal moment. */
+
+.works {
+  position: relative;
+  border: 3px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-brutal);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  overflow: hidden;
+  transition: background var(--transition), border-color var(--transition);
+}
+.works::before,
+.works::after {
+  content: '';
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background:
+    linear-gradient(var(--border), var(--border)) center/11px 2px no-repeat,
+    linear-gradient(var(--border), var(--border)) center/2px 11px no-repeat;
+  opacity: 0.7;
+  z-index: 3;
+  pointer-events: none;
+}
+.works::before { top: -1px; left: -1px; }
+.works::after { bottom: -1px; right: -1px; }
+
+.works__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.625rem 1rem;
+  border-bottom: 2px solid var(--border);
+  background: var(--bg-alt);
+  transition: background var(--transition), border-color var(--transition);
+}
+.works__vol {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-h);
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+.works__volIcon { font-size: 0.9rem; color: var(--accent); }
+.works__volNum { color: var(--text-muted); font-weight: 500; letter-spacing: 0.02em; }
+.works__sheet {
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+.works__sheetSep { color: var(--text-muted); }
+
+.works__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  border: 3px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-brutal);
 }
-
-.projectCard {
-  background: var(--bg-card);
-  border-right: 3px solid var(--border);
-  transition: all var(--transition);
+.workCard {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--border);
+  background: var(--bg-card);
+  transition: background var(--transition);
 }
+.workCard:last-child { border-right: none; }
 
-.projectCard:last-child {
-  border-right: none;
-}
-
-.projectCard__thumb {
-  width: 100%;
+/* Dashed blueprint art panel */
+.workCard__art {
+  position: relative;
   aspect-ratio: 16 / 10;
+  border-bottom: 2px dashed var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 3px solid var(--border);
-  position: relative;
+  background:
+    repeating-linear-gradient(
+      to right,
+      var(--bg-alt) 0,
+      var(--bg-alt) 8px,
+      transparent 8px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--bg-alt) 0,
+      var(--bg-alt) 8px,
+      transparent 8px,
+      transparent 16px
+    );
   overflow: hidden;
 }
+.workCard__art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--border-light) 0 0) center/100% 1px no-repeat,
+    linear-gradient(var(--border-light) 0 0) center/1px 100% no-repeat;
+  opacity: 0.5;
+}
 
-.projectCard__thumb i {
+.workCard__cross {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 10px;
+  height: 10px;
+  background:
+    linear-gradient(var(--accent), var(--accent)) center/10px 2px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) center/2px 10px no-repeat;
+}
+.workCard__n {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.workCard__nIcon { color: var(--accent); }
+.workCard__dim {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.workCard__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.25rem;
-  height: 4.25rem;
-  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.75rem;
   color: var(--accent-text);
   background: var(--bg-card);
   border: 3px solid var(--border);
@@ -103,17 +223,45 @@
   z-index: 1;
   transition: all var(--transition);
 }
-
-.projectCard:hover .projectCard__thumb i {
+.workCard:hover .workCard__icon {
   box-shadow: 2px 2px 0px 0px var(--border);
   transform: translate(2px, 2px);
 }
 
-.projectCard__body {
-  padding: 1.5rem;
+.workCard__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem 1.25rem 1.5rem;
 }
-
-.projectCard__title {
+.workCard__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.875rem;
+  margin-bottom: 0.875rem;
+}
+.workCard__spec {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.688rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.workCard__specLabel {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.workCard__title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
@@ -121,69 +269,134 @@
   margin-bottom: 0.5rem;
   transition: color var(--transition);
 }
-
-.projectCard__desc {
+.workCard__desc {
   font-size: 0.875rem;
   color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 1rem;
+  flex: 1;
+  transition: color var(--transition);
+}
+.workCard__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.workCard__metric {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-text);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.workCard__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.25rem 0.625rem;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.workCard__status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.workCard__statusLive {
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+.workCard__statusLive::before { background: var(--accent); }
+
+.workCard:hover { background: var(--bg-alt); }
+
+/* Single authored focal moment: the approval stamp slams into
+   place with a hard, confident press as the works plate enters
+   view (scroll-timeline where supported), then relaxes. Without
+   support or under reduced motion it rests stamped-in. */
+.works__stampRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  border-top: 2px solid var(--border);
+  background: var(--bg-alt);
+  transition: background var(--transition), border-color var(--transition);
+}
+.works__stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--accent-text);
+  padding: 0.375rem 0.75rem;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+.works__stampIcon { font-size: 1rem; color: var(--accent); }
+.works__stampText { display: inline-flex; flex-direction: column; }
+
+
+.works__stampNote {
+  font-size: 0.813rem;
+  color: var(--text-muted);
+  text-align: right;
   transition: color var(--transition);
 }
 
-.projectCard__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+@supports (animation-timeline: view()) {
+  .works__stamp {
+    animation-name: stampApproved;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 40% entry 100%;
+  }
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0.75rem;
-  background: var(--bg);
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 600;
-  border: 2px solid var(--border);
-  border-radius: 100px;
-  transition: all var(--transition);
+@keyframes stampApproved {
+  0% { opacity: 0; transform: scale(1.6) rotate(-8deg); }
+  45% { opacity: 1; transform: scale(0.92) rotate(0deg); }
+  60% { transform: scale(1.04) rotate(0deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
-.tag:hover {
-  border-color: var(--accent);
-  color: var(--accent-text);
-  background: var(--accent-bg);
-}
-
-.projectCard:hover {
-  background: var(--bg-alt);
-  z-index: 1;
-}
-
-.projectCard:hover .projectCard__thumb {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+  .works__stamp {
+    animation: none !important;
+  }
 }
 
 @media (max-width: 900px) {
-  .portfolio__grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-  }
+  .works__grid { grid-template-columns: 1fr; }
+  .workCard { border-right: none; border-bottom: 2px solid var(--border); }
+  .workCard:last-child { border-bottom: none; }
+}
 
-  .projectCard {
-    border-right: none;
-    border-bottom: 3px solid var(--border);
-  }
-
-  .projectCard:last-child {
-    border-bottom: none;
-  }
+@media (max-width: 640px) {
+  .works__head { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+  .works__stampRow { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .works__stampNote { text-align: left; }
 }
 
 @media (max-width: 768px) {
-  .portfolio {
-    padding: 4rem 1.25rem;
-  }
+  .portfolio { padding: 4rem 1.25rem; }
 }

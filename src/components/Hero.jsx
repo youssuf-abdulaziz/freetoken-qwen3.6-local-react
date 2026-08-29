@@ -10,12 +10,12 @@ const stats = [
 ]
 
 const clients = [
-  'Acme Co.',
-  'Lunar Labs',
-  'Northpeak',
-  'Voxel Studio',
-  'Arcform',
-  'Driftline',
+  { name: 'Acme Co.', code: 'PXC-2401', status: 'LIVE' },
+  { name: 'Lunar Labs', code: 'PXC-2402', status: 'DELIVERED' },
+  { name: 'Northpeak', code: 'PXC-2403', status: 'DELIVERED' },
+  { name: 'Voxel Studio', code: 'PXC-2404', status: 'LIVE' },
+  { name: 'Arcform', code: 'PXC-2405', status: 'OPTIMIZING' },
+  { name: 'Driftline', code: 'PXC-2406', status: 'DELIVERED' },
 ]
 
 const processSteps = [
@@ -203,26 +203,38 @@ function Hero() {
         </div>
 
         <ScrollReveal delay={450}>
-          <div className={styles.trustedBy}>
-            <div className={styles.register}>
-              <div className={styles.register__head}>
-                <span className={styles.trustedBy__label}>Trusted by:</span>
-                <span className={styles.register__counter}>
-                  <i className={`bi bi-receipt ${styles.register__counterIcon}`} />
-                  <span className={styles.register__counterTag}>REC.</span>
-                  <span className={styles.register__count}>0006</span>
-                </span>
-              </div>
-              <div className={styles.register__grid}>
-                {clients.map((name, i) => (
-                  <div className={styles.regEntry} key={i}>
-                    <span className={styles.regEntry__index}>
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className={styles.regEntry__name}>{name}</span>
-                  </div>
-                ))}
-              </div>
+          <div className={styles.dossier}>
+            <div className={styles.dossier__head}>
+              <span className={styles.dossier__vol}>
+                <i className={`bi bi-folder2-open ${styles.dossier__volIcon}`} />
+                FIELD DOSSIER
+                <span className={styles.dossier__volNum}>· PXC-2026</span>
+              </span>
+              <span className={styles.dossier__sheet}>
+                SHEET A — CLIENT LEDGER
+              </span>
+            </div>
+            <div className={styles.ledger}>
+              {clients.map((c, i) => (
+                <div className={styles.ledgerRow} key={i}>
+                  <span className={styles.ledgerRow__n}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className={styles.ledgerRow__name}>{c.name}</span>
+                  <span className={styles.ledgerRow__code}>{c.code}</span>
+                  <span
+                    className={
+                      c.status === 'LIVE'
+                        ? `${styles.ledgerRow__status} ${styles.ledgerRow__statusLive}`
+                        : c.status === 'OPTIMIZING'
+                        ? `${styles.ledgerRow__status} ${styles.ledgerRow__statusOpt}`
+                        : styles.ledgerRow__status
+                    }
+                  >
+                    {c.status}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </ScrollReveal>
