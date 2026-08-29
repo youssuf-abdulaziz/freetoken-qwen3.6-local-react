@@ -408,6 +408,7 @@
   aspect-ratio: 1;
   overflow: hidden;
   color: #0a0a0a;
+  container-type: inline-size;
   transition: filter var(--transition);
 }
 .processStep:nth-child(1) { background: #c4f73a; }
@@ -420,17 +421,17 @@
 
 .processStep__watermark {
   position: absolute;
-  inset: 0;
+  width: 133cqw;
+  height: 133cqw;
+  left: -25cqw;
+  bottom: -25cqw;
   display: flex;
   align-items: center;
   justify-content: center;
   color: inherit;
-  opacity: 0.09;
-  font-family: var(--font-heading);
-  font-size: 2.25rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  opacity: 0.1;
+  font-size: 150cqw;
+  line-height: 1;
   user-select: none;
   pointer-events: none;
 }
@@ -1069,7 +1070,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .processStep { gap: 0.5rem; }
-  .processStep__watermark { font-size: 1.5rem; }
   .processStep__icon { font-size: 1.125rem; }
   .processStep__label {
     font-size: 0.9375rem;

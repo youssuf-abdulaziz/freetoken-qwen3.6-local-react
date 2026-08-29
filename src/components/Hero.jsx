@@ -145,7 +145,7 @@ function Hero() {
                   className={styles.processStep__watermark}
                   aria-hidden="true"
                 >
-                  PIXELCRAFT
+                  <i className={`bi ${step.icon}`} />
                 </span>
                 <span className={styles.processStep__icon}>
                   <i className={`bi ${step.icon}`} />
