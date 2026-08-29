@@ -1,0 +1,116 @@
+.cta {
+  padding: 6rem 1.5rem;
+  background: var(--accent-alt);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--border);
+  border-bottom: 3px solid var(--border);
+  transition: background var(--transition);
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 30px,
+    rgba(0, 0, 0, 0.04) 30px,
+    rgba(0, 0, 0, 0.04) 60px
+  );
+  pointer-events: none;
+}
+
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta__bgText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 800;
+  color: var(--border);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.25;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+.cta__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-h);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__text {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--text-h);
+  color: var(--bg);
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: 2px solid var(--text-h);
+  box-shadow: var(--shadow-brutal);
+  position: relative;
+  z-index: 1;
+}
+
+.cta__btn:hover {
+  background: var(--bg);
+  color: var(--text-h);
+  box-shadow: 2px 2px 0px 0px var(--border);
+  transform: translate(2px, 2px);
+}
+
+.cta__btn:active {
+  box-shadow: 0 0 0 0 var(--border);
+  transform: translate(4px, 4px);
+}
+
+.cta__btnIcon {
+  font-size: 1.25rem;
+  transition: transform var(--transition);
+}
+
+.cta__btn:hover .cta__btnIcon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 4rem 1.25rem;
+  }
+}
