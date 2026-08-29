@@ -121,6 +121,40 @@
   transform: translateX(4px);
 }
 
+/* ── Scroll-choreographed parallax ───────────────────────
+   The giant LET'S TALK watermark drifts and fades as the
+   reader approaches the conversion moment — the same
+   scroll-driven language the hero watermark already uses.
+   Progressive enhancement: without `scroll()` support the
+   watermark sits at its static rest position (complete). */
+
+@supports (animation-timeline: scroll()) {
+  .cta__bgText {
+    animation-name: ctaParallax;
+    animation-timeline: scroll(root);
+    animation-range: 3700px 5250px;
+  }
+}
+
+@keyframes ctaParallax {
+  from {
+    transform: translate(-50%, -50%) rotate(-10deg);
+    opacity: 0.1;
+  }
+  to {
+    transform: translate(-50%, calc(-50% + 60px)) rotate(-10deg);
+    opacity: 0.3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta__bgText {
+    animation: none !important;
+    opacity: 0.25;
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+}
+
 @media (max-width: 768px) {
   .cta {
     padding: 4rem 1.25rem;

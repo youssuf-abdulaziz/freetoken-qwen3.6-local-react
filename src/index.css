@@ -95,15 +95,6 @@ code {
   font-size: 0.875em;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(24px);

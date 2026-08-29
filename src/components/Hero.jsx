@@ -204,13 +204,25 @@ function Hero() {
 
         <ScrollReveal delay={450}>
           <div className={styles.trustedBy}>
-            <span className={styles.trustedBy__label}>Trusted by:</span>
-            <div className={styles.trustedBy__logos}>
-              {clients.map((name, i) => (
-                <span key={i} className={styles.trustedBy__name}>
-                  {name}
+            <div className={styles.register}>
+              <div className={styles.register__head}>
+                <span className={styles.trustedBy__label}>Trusted by:</span>
+                <span className={styles.register__counter}>
+                  <i className={`bi bi-receipt ${styles.register__counterIcon}`} />
+                  <span className={styles.register__counterTag}>REC.</span>
+                  <span className={styles.register__count}>0006</span>
                 </span>
-              ))}
+              </div>
+              <div className={styles.register__grid}>
+                {clients.map((name, i) => (
+                  <div className={styles.regEntry} key={i}>
+                    <span className={styles.regEntry__index}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className={styles.regEntry__name}>{name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </ScrollReveal>
