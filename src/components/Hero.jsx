@@ -207,14 +207,12 @@ function Hero() {
 
         <div className={styles.marquee}>
           <div className={styles.marquee__track} ref={marqueeRef}>
-            <span>
-              WEB DESIGN &#8226; DEVELOPMENT &#8226; E-COMMERCE &#8226; UI/UX
-              &#8226; BRAND IDENTITY &#8226; CREATIVE DIRECTION &#8226;
-            </span>
-            <span>
-              WEB DESIGN &#8226; DEVELOPMENT &#8226; E-COMMERCE &#8226; UI/UX
-              &#8226; BRAND IDENTITY &#8226; CREATIVE DIRECTION &#8226;
-            </span>
+            {[0, 1, 2, 3].map((i) => (
+              <span key={i}>
+                WEB DESIGN &#8226; DEVELOPMENT &#8226; E-COMMERCE &#8226; UI/UX
+                &#8226; BRAND IDENTITY &#8226; CREATIVE DIRECTION &#8226;
+              </span>
+            ))}
           </div>
         </div>
 

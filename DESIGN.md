@@ -61,6 +61,7 @@ typography:
     hero-watermark-max: "18rem"
     hero-bg: "8rem"
     display-max: "7rem"
+    display-mobile: "2.75rem"
     cta-mega-min: "5rem"
     watermark: "4rem"
     quote: "4rem"
@@ -207,7 +208,7 @@ The palette is anchored in warm paper tones with stark near-black ink and two hi
 
 ### Hierarchy
 
-- **Display** (800, `clamp(3.5rem, 10vw, 7rem)`, 0.9): The brand name "PIXELCRAFT" in the hero. Uppercase, tight tracking. Used for single-word impact only.
+- **Display** (800, `clamp(3.5rem, 10vw, 7rem)`, 0.9): The brand name "PIXELCRAFT" in the hero. Uppercase, tight tracking. Used for single-word impact only. On screens ≤768 the floor steps down to `clamp(2.75rem, 10vw, 7rem)` — same slope, lower floor — so the stamp never clips at 320px and reconnects seamlessly at the breakpoint.
 - **Headline** (800, `clamp(2rem, 4vw, 3.5rem)`, 1.1, -0.03em): Section titles and the CTA heading. Bold, condensed, commanding.
 - **Section Title** (800, `clamp(2rem, 4vw, 3rem)`, 1.1, -0.03em): Slightly narrower clamp than headline; used for Services, About, Portfolio, Testimonials section headers.
 - **Subtitle/Lead** (400, `1.125rem`, 1.7): Hero description text. Paired with a left accent border for visual anchor.
