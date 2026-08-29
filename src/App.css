@@ -4,6 +4,30 @@
   min-height: 100vh;
 }
 
+.skipLink {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 300;
+  padding: 0.625rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-h);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-brutal);
+  text-decoration: none;
+  transition: transform var(--transition), background var(--transition), color var(--transition);
+  transform: translateY(-300%);
+}
+.skipLink:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 main {
   flex: 1;
 }

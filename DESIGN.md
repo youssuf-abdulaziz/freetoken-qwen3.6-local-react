@@ -3,7 +3,7 @@ name: PixelCraft Studio
 description: Neo-brutalist web agency landing page
 colors:
   accent: "#e85d26"
-  accent-text: "#bd4218"
+  accent-text: "#b04016"
   accent-strong: "#b83e0e"
   accent-alt: "#c4f73a"
   accent-bg: "rgba(232, 93, 38, 0.08)"
@@ -225,7 +225,7 @@ Sections alternate between paper background (`--bg`) and shadow paper (`--bg-alt
 
 Grid-based card layouts use `gap: 0` with visible 3px borders between cells — cards touch each other and are separated only by their shared borders, creating a unified block with internal divisions.
 
-Breakpoints: `768px` (mobile layout changes), `900px` (card grid collapses from 3-column to 1-column).
+Breakpoints: `900px` (bottom-bar nav replaces desktop nav), `768px` (some card grids collapse to 1-column).
 
 ## Elevation & Depth
 
