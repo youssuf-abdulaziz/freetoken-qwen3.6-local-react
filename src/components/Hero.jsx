@@ -5,8 +5,7 @@ const stats = [
   { num: '200+', label: 'Projects', suffix: '' },
   { num: '98', label: 'Uptime', suffix: '%' },
   { num: '<24', label: 'Response', suffix: 'h' },
-  { num: '50+', label: 'Team', suffix: '' },
-  { num: '12', label: 'Years', suffix: '' },
+  { num: '8+', label: 'Years', suffix: '' },
   { num: '3x', label: 'Avg. ROI', suffix: '' },
 ]
 
@@ -93,7 +92,7 @@ function Hero() {
           applications. No fluff. Just results.
         </p>
 
-        {/* CTAs */}
+        {/* CTAs — single dominant primary + one supporting secondary */}
         <div className={styles.ctaRow}>
           <a href="#cta" className={`${styles.btn} ${styles.btnPrimary}`}>
             Start a Project{' '}
@@ -105,12 +104,6 @@ function Hero() {
           >
             <i className={`${styles.btn__icon} bi bi-collection`} /> View Our
             Work
-          </a>
-          <a
-            href="#services"
-            className={`${styles.btn} ${styles.btnTertiary}`}
-          >
-            <i className={`${styles.btn__icon} bi bi-list-check`} /> See What We Do
           </a>
         </div>
 

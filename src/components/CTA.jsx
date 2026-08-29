@@ -26,6 +26,11 @@ function CTA() {
             <i className={`${styles.cta__btnIcon} bi bi-send`} />
           </a>
         </ScrollReveal>
+        <ScrollReveal delay={400}>
+          <p className={styles.cta__trust}>
+            Reply within 24h · No pressure · Free discovery call
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   )

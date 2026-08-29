@@ -9,10 +9,15 @@ function Footer() {
           PixelCraft
         </a>
         <ul className={styles.footer__links}>
-          {['Services', 'Work', 'About', 'Contact'].map((label, i) => (
-            <li key={i}>
-              <a href={`#${label.toLowerCase()}`} className={styles.footer__link}>
-                {label}
+          {[
+            { label: 'Services', href: '#services' },
+            { label: 'Work', href: '#portfolio' },
+            { label: 'About', href: '#about' },
+            { label: 'Contact', href: '#cta' },
+          ].map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className={styles.footer__link}>
+                {link.label}
               </a>
             </li>
           ))}

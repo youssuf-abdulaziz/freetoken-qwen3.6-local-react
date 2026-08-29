@@ -3,8 +3,8 @@ import styles from './Navbar.module.css'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#portfolio' },
   { label: 'About', href: '#about' },
+  { label: 'Work', href: '#portfolio' },
   { label: 'Contact', href: '#cta' },
 ]
 

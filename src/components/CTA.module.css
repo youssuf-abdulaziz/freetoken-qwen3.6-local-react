@@ -105,6 +105,18 @@
   transition: transform var(--transition);
 }
 
+.cta__trust {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #0a0a0a;
+  opacity: 0.75;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
 .cta__btn:hover .cta__btnIcon {
   transform: translateX(4px);
 }
