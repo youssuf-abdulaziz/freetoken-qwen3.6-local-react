@@ -21,6 +21,7 @@
   --shadow-brutal-lg: 6px 6px 0px 0px var(--border);
   --radius: 4px;
   --transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-draw: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --max-w: 1200px;
 }
 
