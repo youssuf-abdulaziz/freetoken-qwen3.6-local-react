@@ -803,14 +803,16 @@
 .ledgerRow {
   position: relative;
   display: grid;
-  grid-template-columns: 2.5rem 1fr auto minmax(0, auto);
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
+  justify-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   min-height: 3.25rem;
   border-bottom: 2px solid var(--border);
   background: var(--bg-card);
   transition: background var(--transition);
+  text-align: center;
 }
 .ledgerRow:last-child { border-bottom: none; }
 .ledgerRow:hover { background: var(--bg-alt); }
@@ -1128,7 +1130,7 @@
   .marquee { margin-bottom: 1rem; }
 
   .dossier__head { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-  .ledgerRow { grid-template-columns: 2rem 1fr auto; padding: 0.75rem 0.875rem; min-height: 3rem; }
+  .ledgerRow { grid-template-columns: repeat(3, 1fr); padding: 0.75rem 0.875rem; min-height: 3rem; }
   .ledgerRow__code { display: none; }
   .ledgerRow__name { font-size: 0.95rem; }
 
